@@ -13,13 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-@RequestMapping(value = "api")
-@ResponseStatus(HttpStatus.OK)
 public class ApiController{
 
-    @GetMapping
+    @GetMapping("/api")
+    @ResponseStatus(HttpStatus.OK)
     public String test() {
         System.out.println("test 확인");
         return "Test 성공";
+    }
+
+    @GetMapping("/apis")
+    @ResponseStatus(HttpStatus.OK)
+    public String tests(){
+        System.out.println("test 확인");
+        return "HTTPS Test 성공";
     }
 }
